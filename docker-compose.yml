@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    volumes:
+      - psgl_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+  api:
+    build: ./apps/api
+    command: /bin/sh -c "rm -f api/tmp/pids/server.pid && bundle exec rails s -p 8080 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./apps/api:/api
+volumes:
+  psgl_data:
