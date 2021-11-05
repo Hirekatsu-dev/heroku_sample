@@ -3,8 +3,8 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Allow requests to gentle-river-26625.herokuapp.com
-  config.hosts << "gentle-river-26625.herokuapp.com"
+  # Allow requests to ghoulish-web-86440.herokuapp.com
+  config.hosts << "ghoulish-web-86440.herokuapp.com"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
