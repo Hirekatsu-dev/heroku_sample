@@ -12,6 +12,7 @@ jobs:
     - name: build
       run: |
         cd apps/frontend/app
+        npm install
         npm ci
         npm run build
     - name: Deploy to Netlify
