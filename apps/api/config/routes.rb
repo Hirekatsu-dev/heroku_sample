@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :hello, only: %i[show]
+    resources :users, only: %i[index]
   end
 end
