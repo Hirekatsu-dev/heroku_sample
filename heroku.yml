@@ -2,4 +2,4 @@ build:
   docker:
     web: ./apps/api/Dockerfile
 run:
-  web: rm -f /api/tmp/pids/server.pid && bundle exec rails s
+  web: rm -f /api/tmp/pids/server.pid && bundle exec rails s -e production
